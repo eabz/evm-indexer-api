@@ -1,0 +1,27 @@
+{
+  "name": "evm-indexer-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "cf-typegen": "wrangler types",
+    "build": "tsc --noEmit",
+    "lint": "biome lint .",
+    "format": "biome format --write ."
+  },
+  "dependencies": {
+    "@clickhouse/client-web": "1.14.0",
+    "chanfana": "2.8.3",
+    "hono": "4.10.6",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.7",
+    "@types/node": "24.10.1",
+    "@types/service-worker-mock": "2.0.4",
+    "typescript": "5.9.3",
+    "wrangler": "4.50.0"
+  }
+}
