@@ -1,7 +1,7 @@
 import type { Context } from 'hono'
 import { z } from 'zod'
-import { DexTradeSchema } from '../db/schema'
-import { BaseListEndpoint } from './common'
+import { DexTradeSchema } from '@/db'
+import { BaseListEndpoint } from '@/endpoints/common'
 
 export class DexTradeList extends BaseListEndpoint {
   schema = {

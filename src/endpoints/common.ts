@@ -1,7 +1,7 @@
 import { OpenAPIRoute } from 'chanfana'
 import type { Context } from 'hono'
 import { z } from 'zod'
-import { getClient } from '../db/client'
+import { getClient } from '@/db'
 
 export const PaginationSchema = z.object({
   page: z.number().default(1),

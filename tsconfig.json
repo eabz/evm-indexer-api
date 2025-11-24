@@ -7,6 +7,10 @@
     "verbatimModuleSyntax": false,
     "allowJs": true,
     "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "moduleDetection": "force",
     /* Strictness */
     "noImplicitAny": false,

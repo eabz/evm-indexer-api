@@ -1,14 +1,18 @@
 import { fromHono } from 'chanfana'
 import { Hono } from 'hono'
-import { BlockList } from './endpoints/blocks'
-import { ContractList } from './endpoints/contracts'
-import { DexTradeList } from './endpoints/dexTrades'
-import { LogList } from './endpoints/logs'
-import { TokenList } from './endpoints/tokens'
-import { TraceList } from './endpoints/traces'
-import { TransactionList } from './endpoints/transactions'
-import { Erc1155TransferList, Erc20TransferList, Erc721TransferList } from './endpoints/transfers'
-import { WithdrawalList } from './endpoints/withdrawals'
+import {
+  BlockList,
+  ContractList,
+  DexTradeList,
+  Erc1155TransferList,
+  Erc20TransferList,
+  Erc721TransferList,
+  LogList,
+  TokenList,
+  TraceList,
+  TransactionList,
+  WithdrawalList
+} from '@/endpoints'
 
 // Start a Hono app
 const app = new Hono<{ Bindings: Env }>()

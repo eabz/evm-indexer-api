@@ -8,10 +8,7 @@
   "main": "src/index.ts",
   "compatibility_date": "2024-11-24",
   "vars": {
-    "CLICKHOUSE_HOST": "http://localhost:8123",
-    "CLICKHOUSE_USER": "default",
-    "CLICKHOUSE_PASSWORD": "",
-    "CLICKHOUSE_DATABASE": "indexer"
+    "CLICKHOUSE_URL": "http://default:@localhost:8123/indexer"
   },
   "observability": {
     "enabled": true

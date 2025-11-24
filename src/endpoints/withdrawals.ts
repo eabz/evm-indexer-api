@@ -1,7 +1,7 @@
 import type { Context } from 'hono'
 import { z } from 'zod'
-import { WithdrawalSchema } from '../db/schema'
-import { BaseListEndpoint } from './common'
+import { WithdrawalSchema } from '@/db'
+import { BaseListEndpoint } from '@/endpoints/common'
 
 export class WithdrawalList extends BaseListEndpoint {
   schema = {

@@ -1,7 +1,7 @@
 import type { Context } from 'hono'
 import { z } from 'zod'
-import { TokenSchema } from '../db/schema'
-import { BaseListEndpoint } from './common'
+import { TokenSchema } from '@/db'
+import { BaseListEndpoint } from '@/endpoints/common'
 
 export class TokenList extends BaseListEndpoint {
   schema = {

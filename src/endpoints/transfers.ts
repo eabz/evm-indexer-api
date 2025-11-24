@@ -1,7 +1,7 @@
 import type { Context } from 'hono'
 import { z } from 'zod'
-import { Erc1155TransferSchema, Erc20TransferSchema, Erc721TransferSchema } from '../db/schema'
-import { BaseListEndpoint } from './common'
+import { Erc1155TransferSchema, Erc20TransferSchema, Erc721TransferSchema } from '@/db'
+import { BaseListEndpoint } from '@/endpoints/common'
 
 export class Erc20TransferList extends BaseListEndpoint {
   schema = {
