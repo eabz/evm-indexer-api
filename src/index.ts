@@ -8,6 +8,7 @@ import {
   Erc20TransferList,
   Erc721TransferList,
   LogList,
+  SyncStatus,
   TokenList,
   TraceList,
   TransactionList,
@@ -34,6 +35,9 @@ openapi.get('/api/transactions', TransactionList)
 openapi.get('/api/withdrawals', WithdrawalList)
 openapi.get('/api/dex_trades', DexTradeList)
 openapi.get('/api/tokens', TokenList)
+
+// Utility Endpoints
+openapi.get('/api/status/sync', SyncStatus)
 
 // Export the Hono app
 export default app
