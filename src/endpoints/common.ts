@@ -41,6 +41,15 @@ export interface FilterCondition {
   type: string
 }
 
+// Helper to convert ISO 8601 timestamps to ClickHouse DateTime format
+function normalizeTimestamp(value: string): string {
+  // Remove timezone suffix (Z or +00:00) and T separator for ClickHouse compatibility
+  return value
+    .replace('T', ' ')
+    .replace('Z', '')
+    .replace(/[+-]\d{2}:\d{2}$/, '')
+}
+
 export class BaseListEndpoint extends OpenAPIRoute {
   schema = {
     request: {
@@ -61,15 +70,21 @@ export class BaseListEndpoint extends OpenAPIRoute {
 
       const { column, param, operator, type } = condition
 
+      // Normalize DateTime values for ClickHouse compatibility
+      let processedValue = value
+      if (type === 'DateTime' && typeof value === 'string') {
+        processedValue = normalizeTimestamp(value)
+      }
+
       if (operator === 'ILIKE') {
         conditions.push(`lower(${column}) = lower({${param}:String})`)
-        params[param] = value
+        params[param] = processedValue
       } else if (operator === 'IN' && Array.isArray(value)) {
         conditions.push(`${column} IN ({${param}:Array(${type})})`)
-        params[param] = value
+        params[param] = processedValue
       } else {
         conditions.push(`${column} ${operator} {${param}:${type}}`)
-        params[param] = value
+        params[param] = processedValue
       }
     }
 
