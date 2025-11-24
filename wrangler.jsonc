@@ -4,12 +4,16 @@
  */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "sweet-glade-a5e4",
+  "name": "monad-indexer",
   "main": "src/index.ts",
-  "compatibility_date": "2024-11-24",
+	"compatibility_date": "2025-11-15",
   "vars": {
-    "CLICKHOUSE_URL": "http://default:@localhost:8123/indexer"
+    "CLICKHOUSE_URL": "http://localhost:8123",
+    "CLICKHOUSE_DATABASE": "indexer"
   },
+  // Secrets (set via `wrangler secret put`):
+  // - CLICKHOUSE_USERNAME: ClickHouse username (defaults to 'default' if not set)
+  // - CLICKHOUSE_PASSWORD: ClickHouse password (defaults to '' if not set)
   "observability": {
     "enabled": true
   }

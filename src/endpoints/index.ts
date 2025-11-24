@@ -8,3 +8,4 @@ export { TraceList } from './traces'
 export { TransactionList } from './transactions'
 export { Erc1155TransferList, Erc20TransferList, Erc721TransferList } from './transfers'
 export { WithdrawalList } from './withdrawals'
+
